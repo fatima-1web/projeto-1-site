@@ -15,7 +15,7 @@
    /*cor de destaque*/
    --text: #1a2e1c;
    /*texto principal*/
-   --muded: #6b7c6d;
+   --muted: #6b7c6d;
    /*texto secundario*/
    --white: #fff;
    --radius: 4px;
@@ -56,7 +56,7 @@ nav {
    padding: 1.1rem 3rem;
    background: rgba(245, 240, 232, 0.92);
    backdrop-filter: blur(8px);
-   border-bottom: 1px solid rgba(44, 74, 46, 0.1, );
+   border-bottom: 1px solid rgba(44, 74, 46, 0.1 );
    transition: box-shadow 0.3s;
 }
 
@@ -146,15 +146,14 @@ nav.scrolled {
    height: 100vh;
    min-height: 600px;
    display: flex;
-   align-items: flex;
-   end;
+   align-items: flex-end;
    overflow: hidden;
 }
 
 .hero-bg {
    position: absolute;
    inset: 0;
-   background: linear-gradient(135deg, #d4e8d40%, #a8c8a8 30%, #6b9b6e 60%, #3a6b3c 100%)
+   background: linear-gradient(135deg, #d4e8d4 0%, #a8c8a8 30%, #6b9b6e 60%, #3a6b3c 100%)
 }
 
 .hero-overlay {
@@ -378,7 +377,7 @@ section {
    margin-bottom: 0.3rem;
 }
 
-ci.desc {
+.ci-desc {
    font-size: 0.88rem;
    color: rgba(245, 240, 232, 0.65);
    line-height: 1.6;
@@ -414,7 +413,7 @@ ci.desc {
 
 /*==================SEÇÃO DE CONTINENTES ========*/
 
-#continente {
+#continentes {
    background: var(--creme);
 }
 
@@ -435,10 +434,10 @@ ci.desc {
 }
 
 .cont-card:hover {
-   transform: translateY(4px);
+   transform: translateY(-4px);
 }
 
-/ .cont-card-bg {
+ .cont-card-bg {
    position: absolute;
    inset: 0;
    display: flex;
@@ -479,7 +478,7 @@ ci.desc {
 .cont-card-overlay {
    position: absolute;
    inset: 0;
-   background: linear-gradient(to top, rgba(44, 74, 46, 0.85) 0% transparent 60%);
+   background: linear-gradient(to top, rgba(44, 74, 46, 0.85) 0% ,transparent 60%);
 }
 
 .cont-card-content {
@@ -539,7 +538,7 @@ ci.desc {
    align-items: center;
    justify-content: center;
    font-size: 4rem;
-   background: linear-gradient(135deg, var(--creme) ,0% var(--creme-dark) 100%)
+   background: linear-gradient(135deg, var(--creme) 0%, var(--creme-dark) 100%)
 }
 
 .dest-card-body {
@@ -581,7 +580,7 @@ ci.desc {
 }
 
 /*====seção de curiosidades===*/
-#curiosidade {
+#curiosidades {
    background: var(--verde);
 }
 
@@ -609,7 +608,7 @@ ci.desc {
    font-size: 2.5rem;
    color: var(--terracota);      
    font-weight: 300;
-   line-height 1;
+   line-height: 1;
    
 }
 .curio-text{
@@ -636,14 +635,15 @@ ci.desc {
    text-align: center;
    
 }
-.newsletter-wrap {max-width: 520 px;
+.newsletter-wrap {max-width: 520px;
    margin: 0 auto;
 }
 .nl-form {
    display: flex;
    gap: 0;
    margin-top: 2rem;
-   flex-wrap: center;
+   flex-wrap: wrap;
+   justify-content: center;
   
 }
 .nl-form input {
