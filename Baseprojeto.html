@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> O mundo em Detalhes </title>
+    <!--Fonte do Google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!--Arquivo de estilos-->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <!--============Menu============= -->
+    <nav id="nav">
+        <div class="nav-brand">
+            <h1> O mundo em Detalhes </h1>
+            <p>Descubra o mundo do seu jeito</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#globo">Globo </a></li>
+            <li><a href="#continente">Continente</a></li>
+            <li><a href="#destino">Destino</a></li>
+            <li><a href="#curiosidade">Curiosidade</a></li>
+        </ul>
+        <button class="nav-cta" onclick="document.getElementById('newsletter'). scrollIntoView({behavior:'smooth'})">
+            Explorar agora
+        </button>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!---=============Hero=============-->
+    <section class="hero" id="inicio">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Turismo Interativo Mundial</p>
+            <h2 class="hero-title">O Mundo<br> em <em>Detalhes</em></h2>
+            <p class="hero-sub">Explore Continente, Descubra Destinos Incríveis e Planeje Sua Próxima Aventura
+            </p>
+            <div class="hero-actions">
+                <a href="#globo" class="btn-primary">Explorar o globo</a>
+                <a href="#destinos" class="btn-outline">Ver Destinos</a>
+            </div>
+        </div>
+        <div class="hero-globe ">
+            <canvas id="hero-globe" width="360" height="360"></canvas>
+        </div>
+    </section>
+
+    <!================Globo==================>
+
+        <section id="globo">
+            <div class="globo-layout">
+                <div>
+                    <p class="section-label">Explore o Planeta</p>
+                    <h2 class="section-title">Gire o Globo, <br>Descubra o Mundo</h2>
+                    <p class="section-sub"> Clique me qualquer ponto para ver informações de destinos e links
+                        para planejar sua viagem.</p>
+                    <div class="globo-canvas-wrap">
+                        <div class="globo-glow"></div>
+                        <canvas id="main-globe" width="360" height="360"></canvas>
+                    </div>
+                    <p class="globe-hint"> Arraste para girar. Clique para explorar</p>
+                </div>
+                <div>
+                    <div class="country-info" id="country-info">
+                        <div class="ci-flag" id="ci-flag"></div>
+                        <div class="ci-name" id="ci-name">Clique no Destino</div>
+                        <div class="ci-desc " id="ci-desc">Gire o globo e clique em um dos pontos para
+                            descrobrir informações sobre o pais.</div>
+                        <div class="ci-links" id="ci-links"></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!---=============Continente================-->
+
+        <section id="continente">
+            <div class="continente-wrap">
+                <p class="section-label">Explore por região</p>
+                <h2 class="section-title">Continente</h2>
+                <p class="section-sub"> Escolha um continentes para descobrir seus paises e destinos
+                    imperdiveis </p>
+                <div class="continente-grid">
+                    <div class="cont-card" onclick="filterDest('europa')">
+                        <div class="cont-card-bg bg-europa">III</div>
+                        <div class="cont-card-overlay"></div>
+                        <div class="cont-card-content">
+                            <div class="cont-card-name">Europa</div>
+                            <div class="cont-card-count">44 países. Arte, histórias e gastronomia </div>
+                        </div>
+                    </div>
+
+
+                    <div class="cont-card" onclick="filterDest('asia')">
+                        <div class="cont-card-bg bg-asia">III</div>
+                        <div class="cont-card-overlay"></div>
+                        <div class="cont-card-content">
+                            <div class="cont-card-name">Asia</div>
+                            <div class="cont-card-count">48 países Tradição e modernidade</div>
+                        </div>
+                    </div>
+                    <div class="cont-card" onclick="filterDest('oceania')">
+                        <div class="cont-card-bg bg-oceania"></div>
+                        <div class="cont-card-overlay"></div>
+                        <div class="cont-card-content">
+                            <div class="cont-card-name">Oceania</div>
+                            <div class="cont-card-count">14 Praias e vida selvagem</div>
+                        </div>
+                    </div>
+                    <div class="cont-card" onclick="filterDest('oriente')">
+                        <div class="cont-card-bg bg-oriente"></div>
+                        <div class="cont-card-overlay"></div>
+                        <div class="cont-card-content">
+                            <div class="cont-card-name">Oriente Médio</div>
+                            <div class="cont-card-count">18 países Deserto e modernidade </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--========================DESTINOS====================-->
+        <section id="destinos">
+            <div class="section-wrap">
+                <p class="section-label">Destinos em destaques</p>
+                <h2 class="section-title">Para onde ir?</h2>
+                <p class="section-sub"> Destinos selecionados para cada tipo de viajante</p>
+                <div class="dest-grid" id="dest-grid">
+                    <!-- preenchido pelo javascript-->
+                </div>
+            </div>
+        </section>
+
+        <!----==================CURIOSIDADES================-->
+        <section id="curiosidade">
+            <div class="section-wrap">
+                <p class="section-label">Você sabia</p>
+                <h2 class="section-title section-title-light"> O mundo em números </h2>
+                <div class="curio-grid">
+                    <div class="curio-card">
+                        <div class="curio-num">195</div>
+                        <div class="curio-text">Paises reconhecidos pela ONU no mundo todo</div>
+                        <div class="curio-label ">Paises </div>
+                    </div>
+                    <div class="curio-card">
+                        <div class="curio-num">7.117</div>
+                        <div class="curio-text">Idiomas falado ao redor do planeta</div>
+                        <div class="curio-label">Idiomas</div>
+                    </div>
+                    <div class="curio-card">
+                        <div class="curio-num">1.400+</div>
+                        <div class="curio-text">Patrimonio mundial da UNESCO para vistar </div>
+                        <div class="curio-label">Patrimônios</div>
+                    </div>
+                    <div class="curio-card">
+                        <div class="curio-num">70%</div>
+                        <div class="curio-text">Da superficie da terra coberta por oceanos</div>
+                        <div class="curio-label">Oceanos </div>
+                    </div>
+                    <div class="curio-card">
+                        <div class="curio-num">8ª</div>
+                        <div class="curio-text">Maravilha: A Grande Barreira de Coral </div>
+                        <div class="curio-label">Maravilha</div>
+                    </div>
+                    <div class="curio-card">
+                        <div class="curio-num">36.000m</div>
+                        <div class="curio-text">Profundidade da Fossa das Marinanas</div>
+                        <div class="curio-label">Profundidade</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===========================Newsletter==================-->
+        <section id="newsletter">
+            <div class="newsletter-wrap">
+                <p class="newsletter-label">Fique por dentro</p>
+                <h2 class="section-title">Novos destinos toda semana</h2>
+                <p class="section-sub">Receba roteiros , curiosidades e dicas de viagem no seu
+                    e-mail.</p>
+                <div class="nl-form">
+                    <input type="email" id="nl-email" placeholder="seu @email.com" />
+                    <button onclick="nlSubscribe()">Quero receber</button>
+                </div>
+                <p id="nl-msg"></p>
+            </div>
+        </section>
+        <!--================FIM====================-->
+        <footer>
+            <div class="footer-brand">O mundo em Detalhes</div>
+            <p>2026. Todos os direitos reservados</p>
+            <p>Feito com para viajantes </p>
+        </footer>
+
+        <!--===ARQUIVO DE JAVASCRIPT========-->
+        <script src="script.js"></script>
+</body>
+
+</html>
